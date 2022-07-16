@@ -20,6 +20,7 @@ public class Array_3 {
     /**
      * 해결방법 : 각 자릿수에 있는 숫자를 곱한 뒤 해당 자리에 결과를 적고 마지막에 같은 자리에 있는 숫자들을 모두 더해주는 방법
      * 공간 절약을 위해 곱셈을 할 때마다 그때그때 결과값을 더할 것이다.
+     * m개의 부분 곱셈이 존재하고 각각 최대 n + 1개의 자릴수와 곱셈을 수행하므로 총 시간복잡도는 O(nm)이 된다. 
      */
     public static List<Integer> multiply(List<Integer> num1, List<Integer> num2) {
         final int sign = num1.get(0) < 0 ^ num2.get(0) < 0 ? - 1 : 1; // xor 비트 연산 - 하나만 음수인 경우 음수
