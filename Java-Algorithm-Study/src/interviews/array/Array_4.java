@@ -32,6 +32,7 @@ public class Array_4 {
      * 해법 : 우선 시도해볼 수 있는 방법은 현재 위치에서 최대한 멀리 나가는 것이지만, 이 방법대로 움직인다면 중간에 더 멀리
      * 나갈 수 있는 위치를 지나칠 수 있기 때문에 해법이 될 수 없다. 결국 최소한 배열 A에 있는 모든 값을 체크해봐야 한다.
      * i 위치에서는 최대 i + A[i]까지 움직일 수 있다는 점을 고려해서 구현하면 된다.
+     * 이 알고리즘의 시간 복잡도는 O(n)이고, 공간 복잡도는 O(1)이 된다. 
      */
     public static boolean canReachEnd(List<Integer> maxAdvanceSteps) {
         int furthestReachSoFar = 0, lastIndex = maxAdvanceSteps.size() - 1;
