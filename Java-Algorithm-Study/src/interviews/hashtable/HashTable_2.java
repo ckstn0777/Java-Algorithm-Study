@@ -11,7 +11,35 @@ public class HashTable_2 {
     public static void main(String[] args) {
         String letterText = "letter";
         String magazineText = "magazine text lr";
-        System.out.println(isLetterConstructibleFromMagazine(letterText, magazineText));
+        System.out.println(my_isLetterConstructibleFromMagazine(letterText, magazineText));
+    }
+
+    public static boolean my_isLetterConstructibleFromMagazine(String letterText,
+                                                            String magazineText) {
+        // letterText 를 먼저 해시테이블에 저장
+        Map<Character, Integer> characterIntegerMap = new HashMap<>();
+        for (int i = 0; i < letterText.length(); i++) {
+            char c = letterText.charAt(i);
+            if (characterIntegerMap.containsKey(c)) {
+                characterIntegerMap.put(c, characterIntegerMap.get(c) + 1);
+            } else {
+                characterIntegerMap.put(c, 1);
+            }
+        }
+
+        // magazineText 를 돌면서 해시테이블에 있는 문자 발견 시 마다 제거
+        for (int i = 0; i < magazineText.length(); i++) {
+            char c = magazineText.charAt(i);
+            if (characterIntegerMap.containsKey(c)) {
+                characterIntegerMap.put(c, characterIntegerMap.get(c) - 1);
+                if (characterIntegerMap.get(c) == 0) {
+                    characterIntegerMap.remove(c);
+                    if (characterIntegerMap.isEmpty()) return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
