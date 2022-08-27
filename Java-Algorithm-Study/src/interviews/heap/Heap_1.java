@@ -2,6 +2,11 @@ package interviews.heap;
 
 import java.util.*;
 
+/**
+ * 문제 : 여러분에게 500개의 파일이 주어져있다. 각 파일에는 회사마다 주식 거래가 시간순으로 정렬되어있다. 이런 파일 500개를 하나로 합쳐서 시간순으로 정렬된
+ * 하나의 파일을 만들어야 한다. 좀 더 추상적인 형태로 바꿔보면, 정렬된 시퀀스의 집합이 입력으로 주어졌을 때, 이들을 하나의 정렬된 시퀀스로 합치는 프로그램을 작성하라.
+ * 단, 알고리즘 시간복잡도가 최소가 되도록 효율적으로 작성하라.
+ */
 public class Heap_1 {
     public static void main(String[] args) {
         List<List<Integer>> sortedArrays = new ArrayList<>();
@@ -27,6 +32,15 @@ public class Heap_1 {
             this.value = value;
             this.arrayId = arrayId;
         }
+    }
+
+    /**
+     * 1차 복습(22.08.27) : 복습을 안보고 하려고 했는데 잘 안되서 정답코드를 확인해봤다. 확실히 Iterator를 왜 사용해야 하는지,
+     * 그리고 PriorityQueue를 Comparator 재설정하는 법과 사용법 등... 이런거는 외울 필요성을 느꼈다. (코테 때 자동완성은 없잖아ㅠ. 자바로 볼 건 아니지만)
+     */
+    public static List<Integer> my_mergeSortedArrays(List<List<Integer>> sortedArrays) {
+        // ...
+        return null;
     }
 
     /**
